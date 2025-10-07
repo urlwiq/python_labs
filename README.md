@@ -98,7 +98,7 @@ print(min_max([1.5,2,2.0,-3.1]))
 ```
 ![im01.png](/images/lab02/im01.png)
 
-###Задание 2 
+### Задание 2 
 ```
 def unique_sorted(nums: list[float | int]):
     return sorted(set(nums))
