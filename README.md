@@ -157,7 +157,7 @@ print(transpose([[]]))
 
 ### Задание 5
 ```
-def row_sums(mat: list[list[float | int]]) -> list[float]:
+def row_sums(mat: list[list[float | int]]):
     if len(mat) == 0:
         return []
     for i in mat:
@@ -182,7 +182,7 @@ print(row_sums([[1,2], [3]]))
 
 ### Задание 6
 ```
-def col_sums(mat: list[list[float | int]]) -> list[float]:
+def col_sums(mat: list[list[float | int]]):
     if len(mat) == 0:
         return []
     if len(mat) != 0:
