@@ -160,10 +160,8 @@ print(transpose([[]]))
 def row_sums(mat: list[list[float | int]]) -> list[float]:
     if len(mat) == 0:
         return []
-    if len(mat) != 0:
-        ln = len(mat[0])
     for i in mat:
-        if len(i) != ln:
+        if len(i) != len(mat[0]:
             raise TypeError("ValueError")
     if not isinstance(mat, list):
         raise TypeError('TypeError')
