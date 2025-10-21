@@ -279,5 +279,4 @@ if __name__ == "__main__":
     main()
 ```
 
-
 ![im01.png](/images/lab04/im01.png)
