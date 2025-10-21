@@ -98,7 +98,7 @@ print(min_max([1.5,2,2.0,-3.1]))
 ```
 ![im01.png](/images/lab02/im01.png)
 
-###Задание 2 
+### Задание 2 
 ```
 def unique_sorted(nums: list[float | int]):
     return sorted(set(nums))
@@ -157,13 +157,11 @@ print(transpose([[]]))
 
 ### Задание 5
 ```
-def row_sums(mat: list[list[float | int]]) -> list[float]:
+def row_sums(mat: list[list[float | int]]):
     if len(mat) == 0:
         return []
-    if len(mat) != 0:
-        ln = len(mat[0])
     for i in mat:
-        if len(i) != ln:
+        if len(i) != len(mat[0]:
             raise TypeError("ValueError")
     if not isinstance(mat, list):
         raise TypeError('TypeError')
@@ -184,7 +182,7 @@ print(row_sums([[1,2], [3]]))
 
 ### Задание 6
 ```
-def col_sums(mat: list[list[float | int]]) -> list[float]:
+def col_sums(mat: list[list[float | int]]):
     if len(mat) == 0:
         return []
     if len(mat) != 0:
