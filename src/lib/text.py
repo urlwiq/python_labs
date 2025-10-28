@@ -1,6 +1,9 @@
 import re
 from typing import Dict, List, Tuple
 from collections import Counter
+from pathlib import Path
+from pathlib import Path
+from typing import Union
 
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     result = text
@@ -44,3 +47,7 @@ if __name__ == "__main__":
     
     top_3 = top_n(freq, 3)
     print("Топ-3:", top_3)
+
+def ensure_parent_dir(path: Union[str, Path]):
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
