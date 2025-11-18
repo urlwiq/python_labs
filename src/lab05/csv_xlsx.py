@@ -3,6 +3,7 @@ from pathlib import Path
 
 try:
     import openpyxl
+    from openpyxl import Workbook
     from openpyxl.styles import Font
     from openpyxl.utils import get_column_letter
 except ImportError:
@@ -29,8 +30,9 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     
     if not data:
         raise ValueError("CSV файл пуст")
-    
-
+    workbook = openpyxl.Workbook()
+    sheet = workbook.active
+    sheet.title = "Sheet1"
     for row_idx, row in enumerate(data, 1):
         for col_idx, value in enumerate(row, 1):
             sheet.cell(row=row_idx, column=col_idx, value=value)
