@@ -17,31 +17,28 @@ def build_parser() -> argparse.ArgumentParser:
   python src/lab06/cli_convert.py json2csv --in data/samples/people.json --out data/out/people.csv
   python src/lab06/cli_convert.py csv2json --in data/samples/people.csv --out data/out/people.json
   python src/lab06/cli_convert.py csv2xlsx --in data/samples/people.csv --out data/out/people.xlsx
-        """
+        """,
     )
 
     subparsers = parser.add_subparsers(
         dest="command",
         title="Доступные команды",
         description="json2csv - JSON в CSV, csv2json - CSV в JSON, csv2xlsx - CSV в XLSX",
-        required=True
+        required=True,
     )
 
     # json2csv
-    p1 = subparsers.add_parser("json2csv", 
-                              help="Конвертация JSON → CSV")
+    p1 = subparsers.add_parser("json2csv", help="Конвертация JSON → CSV")
     p1.add_argument("--in", dest="input", required=True, help="Входной JSON-файл")
     p1.add_argument("--out", dest="output", required=True, help="Выходной CSV-файл")
 
     # csv2json
-    p2 = subparsers.add_parser("csv2json", 
-                              help="Конвертация CSV → JSON")
+    p2 = subparsers.add_parser("csv2json", help="Конвертация CSV → JSON")
     p2.add_argument("--in", dest="input", required=True, help="Входной CSV-файл")
     p2.add_argument("--out", dest="output", required=True, help="Выходной JSON-файл")
 
     # csv2xlsx
-    p3 = subparsers.add_parser("csv2xlsx", 
-                              help="Конвертация CSV → XLSX")
+    p3 = subparsers.add_parser("csv2xlsx", help="Конвертация CSV → XLSX")
     p3.add_argument("--in", dest="input", required=True, help="Входной CSV-файл")
     p3.add_argument("--out", dest="output", required=True, help="Выходной XLSX-файл")
 
@@ -53,18 +50,18 @@ def main(argv=None):
         argv = sys.argv[1:]
 
     parser = build_parser()
-    
-    if not argv or any(arg in argv for arg in ('-h', '--help')):
+
+    if not argv or any(arg in argv for arg in ("-h", "--help")):
         parser.print_help()
         return
-        
+
     args = parser.parse_args(argv)
 
     # Словарь команд
     command_handlers = {
-        'json2csv': json_to_csv,
-        'csv2json': csv_to_json,
-        'csv2xlsx': csv_to_xlsx
+        "json2csv": json_to_csv,
+        "csv2json": csv_to_json,
+        "csv2xlsx": csv_to_xlsx,
     }
 
     try:
@@ -74,11 +71,11 @@ def main(argv=None):
 
         # Создаем директорию для выходного файла
         ensure_directory(args.output)
-        
+
         # Выполняем команду
         command_handlers[args.command](args.input, args.output)
         print(f"Файл создан: {args.output}")
-        
+
     except KeyError:
         print("Ошибка: неизвестная команда")
         parser.print_help()

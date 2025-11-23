@@ -1,5 +1,5 @@
 def transpose(mat: list[list[float | int]]):
-    if not isinstance(mat,list):
+    if not isinstance(mat, list):
         raise TypeError("ValueError")
     if len(mat) == 0:
         return []
@@ -15,8 +15,10 @@ def transpose(mat: list[list[float | int]]):
             b.append(mat[j][i])
         trans_mat.append(b)
     return trans_mat
+
+
 print(transpose([[1, 2, 3]]))
-print(transpose([[1],[2], [3]]))
-print(transpose([[1,2],[3,4]]))
-print(transpose([[1,2],[3]]))
+print(transpose([[1], [2], [3]]))
+print(transpose([[1, 2], [3, 4]]))
+print(transpose([[1, 2], [3]]))
 print(transpose([[]]))
