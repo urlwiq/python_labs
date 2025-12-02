@@ -73,8 +73,7 @@ def students_from_json(path: str) -> list[Student]:
     
     return students
 def demo_serialization():
-    """Демонстрация полного цикла"""
-    print("=== Демонстрация сериализации ===")
+    print("==============================")
     
     input_path = "data/lab08/students_input.json"
     output_path = "data/lab08/students_output.json"
@@ -87,7 +86,7 @@ def demo_serialization():
         print("✓ Сериализация завершена успешно!")
         
     except Exception as e:
-        print(f"✗ Ошибка: {e}"
+        print(f"✗ Ошибка: {e}")
 if __name__ == "__main__":
     demo_serialization()
 ```

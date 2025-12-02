@@ -16,15 +16,11 @@ def students_from_json(path: str) -> list[Student]:
             students.append(student)
         except (ValueError, KeyError) as e:
             print(f"Ошибка при создании студента: {e}")
-    
     return students
 def demo_serialization():
-    """Демонстрация полного цикла"""
-    print("=== Демонстрация сериализации ===")
-    
+    print("=========================")
     input_path = "data/lab08/students_input.json"
     output_path = "data/lab08/students_output.json"
-    
     try:
         students = students_from_json(input_path)
         print(f"Загружено студентов: {len(students)}")

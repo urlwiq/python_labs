@@ -7,7 +7,7 @@ class Student:
     birthdate: str
     group: str
     gpa: float
-
+    
     def __post_init__(self):
         try:
             datetime.strptime(self.birthdate, "%Y-%m-%d")
