@@ -7,7 +7,7 @@ class Student:
     birthdate: str
     group: str
     gpa: float
-    
+
     def __post_init__(self):
         try:
             datetime.strptime(self.birthdate, "%Y-%m-%d")
@@ -47,3 +47,4 @@ class Student:
 
     def __str__(self):
         return f"Студент: {self.fio}, Группа: {self.group}, GPA: {self.gpa}, Возраст: {self.age()} лет"
+    
