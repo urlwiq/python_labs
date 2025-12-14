@@ -47,4 +47,3 @@ class Student:
 
     def __str__(self):
         return f"Студент: {self.fio}, Группа: {self.group}, GPA: {self.gpa}, Возраст: {self.age()} лет"
-    
